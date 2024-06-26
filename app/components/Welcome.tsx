@@ -1,3 +1,6 @@
+'use client';
+import { DataContext } from '../_lib/DataContext';
+import { useContext } from 'react';
 const items = {
   line1: 'Welcome to the',
   line2: 'Frontend Quiz!',
@@ -5,6 +8,8 @@ const items = {
 };
 
 export default function Welcome() {
+  const { progress } = useContext(DataContext);
+  if (progress !== 0) return;
   return (
     <section className="flex flex-col">
       <span className="text-[64px] font-light leading-[100%] text-[#313E51] transition dark:text-white">

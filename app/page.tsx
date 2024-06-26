@@ -2,11 +2,12 @@ import ButtonTheme from '@/app/components/ButtonTheme';
 import Image from 'next/image';
 import patternBackgroundDesktopLight from '@/public/assets/images/pattern-background-desktop-light.svg';
 import patternBackgroundDesktopDark from '@/public/assets/images/pattern-background-desktop-dark.svg';
-import AnswerBox from '@/app/components/AnswerBox';
+import OptionBox from '@/app/components/OptionBox';
 import Selected from '@/app/components/Selected';
 import ProgressBar from './components/ProgressBar';
 import ButtonSubmit from './components/ButtonSubmit';
 import Welcome from './components/Welcome';
+import WelcomeBox from './components/WelcomeBox';
 
 export default function Home() {
   return (
@@ -30,10 +31,11 @@ export default function Home() {
           <div className="mt-[85px] flex h-[564px] w-full justify-between">
             <div className="flex h-[452px] max-h-full w-[453px] flex-col justify-between">
               <Welcome />
+              <WelcomeBox />
               <ProgressBar />
             </div>
             <div className="flex h-full flex-col justify-between">
-              <AnswerBox />
+              <OptionBox />
               <ButtonSubmit />
             </div>
           </div>

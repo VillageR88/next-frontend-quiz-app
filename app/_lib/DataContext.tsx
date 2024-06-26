@@ -12,24 +12,39 @@ export const bgColors = {
 
 export const DataContext = createContext(
   {} as {
-    selection: Selection | null;
-    setSelection: Dispatch<SetStateAction<Selection | null>>;
+    selectionQuiz: Selection | null;
+    setSelectionQuiz: Dispatch<SetStateAction<Selection | null>>;
     progress: number;
     setProgress: Dispatch<SetStateAction<number>>;
+    selectionOption: number | undefined;
+    setSelectionOption: Dispatch<SetStateAction<number | undefined>>;
+    showCorrect: boolean;
+    setShowCorrect: Dispatch<SetStateAction<boolean>>;
+    score: number;
+    setScore: Dispatch<SetStateAction<number>>;
   },
 );
 
 export default function DataProvider({ children }: { children: ReactNode }) {
-  const [selection, setSelection] = useState<Selection | null>(null);
+  const [selectionQuiz, setSelectionQuiz] = useState<Selection | null>(null);
+  const [selectionOption, setSelectionOption] = useState<number | undefined>(undefined);
   const [progress, setProgress] = useState<number>(0);
+  const [showCorrect, setShowCorrect] = useState<boolean>(false);
+  const [score, setScore] = useState<number>(0);
 
   return (
     <DataContext.Provider
       value={{
-        selection,
-        setSelection,
+        selectionQuiz,
+        setSelectionQuiz,
         progress,
         setProgress,
+        selectionOption,
+        setSelectionOption,
+        showCorrect,
+        setShowCorrect,
+        score,
+        setScore,
       }}
     >
       {children}
