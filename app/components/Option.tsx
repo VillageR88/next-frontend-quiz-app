@@ -3,14 +3,15 @@ import { DataContext } from '../_lib/DataContext';
 import { useContext } from 'react';
 import dataJson from '@/public/assets/data.json';
 
-export default function WelcomeBox() {
+export default function Option() {
   const { progress, selectionQuiz } = useContext(DataContext);
+
+  if (!progress || progress > 10) return;
   const items = {
     title: `Question ${progress.toString()} of 10`,
     description: dataJson.quizzes.find((item) => item.title === (selectionQuiz as string))?.questions[progress - 1]
       .question,
   };
-  if (!progress) return;
   return (
     <section className="flex flex-col gap-[27px]">
       <span className="text-[20px] font-light italic leading-[150%] text-[#626C7F] transition dark:text-white">

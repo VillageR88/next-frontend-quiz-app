@@ -107,9 +107,9 @@ const ChoiceBarOptions = ({ desc, index, letter }: ChoiceBarOptionsProps) => {
 
 export default function OptionBox() {
   const { progress, selectionQuiz } = useContext(DataContext);
+  if (!progress || progress > 10) return null;
   const listAnswers = dataJSON.quizzes.find((item) => item.title === (selectionQuiz as string))?.questions[progress - 1]
     .options;
-
   return (
     <div className="flex h-[440px] w-[564px] flex-col justify-between">
       {progress === 0 &&
@@ -117,6 +117,7 @@ export default function OptionBox() {
           <ChoiceBarQuiz src={subject.icon} desc={subject.title} key={subject.title} />
         ))}
       {progress > 0 &&
+        progress < 11 &&
         selectionQuiz &&
         listAnswers?.map((option, index) => (
           <ChoiceBarOptions index={index} desc={option} letter={abcd[index]} key={option} />

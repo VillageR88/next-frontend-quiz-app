@@ -26,9 +26,11 @@ export const DataContext = createContext(
 );
 
 export default function DataProvider({ children }: { children: ReactNode }) {
-  const [selectionQuiz, setSelectionQuiz] = useState<Selection | null>(null);
+  //debug here
+  const [selectionQuiz, setSelectionQuiz] = useState<Selection | null>('HTML' as Selection);
   const [selectionOption, setSelectionOption] = useState<number | undefined>(undefined);
-  const [progress, setProgress] = useState<number>(0);
+  //debug here
+  const [progress, setProgress] = useState<number>(11);
   const [showCorrect, setShowCorrect] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
 

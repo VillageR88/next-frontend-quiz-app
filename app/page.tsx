@@ -7,19 +7,20 @@ import Selected from '@/app/components/Selected';
 import ProgressBar from './components/ProgressBar';
 import ButtonSubmit from './components/ButtonSubmit';
 import Welcome from './components/Welcome';
-import WelcomeBox from './components/WelcomeBox';
+import Option from './components/Option';
+import SummaryBox from './components/SummaryBox';
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="flex size-full min-h-screen items-center">
       <Image
         className="imageBackground bg-[#F4F6FA] dark:opacity-0"
-        src={patternBackgroundDesktopLight as string}
+        src={(await patternBackgroundDesktopLight) as string}
         alt="background pattern"
       />
       <Image
         className="imageBackground bg-[#313E51] opacity-0 dark:opacity-100"
-        src={patternBackgroundDesktopDark as string}
+        src={(await patternBackgroundDesktopDark) as string}
         alt="background pattern"
       />
       <div className="relative mx-auto flex size-full min-h-screen max-w-[1160px] items-center">
@@ -31,11 +32,12 @@ export default function Home() {
           <div className="mt-[85px] flex h-[564px] w-full justify-between">
             <div className="flex h-[452px] max-h-full w-[453px] flex-col justify-between">
               <Welcome />
-              <WelcomeBox />
+              <Option />
               <ProgressBar />
             </div>
-            <div className="flex h-full flex-col justify-between">
+            <div className="flex h-full flex-col justify-start gap-[32px]">
               <OptionBox />
+              <SummaryBox />
               <ButtonSubmit />
             </div>
           </div>

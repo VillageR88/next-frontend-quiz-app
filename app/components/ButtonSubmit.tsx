@@ -18,11 +18,15 @@ export default function ButtonSubmit() {
   } = useContext(DataContext);
   const quiz = dataJSON.quizzes.find((item) => item.title === (selectionQuiz as string));
   if (!quiz) return null;
-  const selection = quiz.questions[progress - 1];
-  const answer = selection.answer;
-  const isCorrect = selection.options[selectionOption as keyof typeof selection.options] === answer;
-
   if (!progress) return;
+  let selection: { answer: string; options: string[] };
+  let answer: string;
+  let isCorrect: boolean;
+  if (progress < 11) {
+    selection = quiz.questions[progress - 1];
+    answer = selection.answer;
+    isCorrect = selection.options[selectionOption as keyof typeof selection.options] === answer;
+  }
   return (
     <button
       onClick={() => {
