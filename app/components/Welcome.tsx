@@ -12,9 +12,9 @@ export default function Welcome() {
   if (progress !== 0) return;
   return (
     <section className="flex flex-col">
-      <span className="text-[40px] font-light leading-[100%] text-[#313E51] transition dark:text-white md:text-[64px]">
+      <h1 className="text-[40px] font-light leading-[100%] text-[#313E51] transition dark:text-white md:text-[64px]">
         {items.line1}
-      </span>
+      </h1>
       <span className="mt-[8px] text-[40px] font-medium leading-[100%] text-[#313E51] transition dark:text-white md:text-[64px]">
         {items.line2}
       </span>

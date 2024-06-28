@@ -14,9 +14,9 @@ export default function Option() {
   };
   return (
     <section className="flex flex-col gap-[12px] md:gap-[27px]">
-      <span className="text-[14px] font-light italic leading-[150%] text-[#626C7F] transition dark:text-white md:text-[20px]">
+      <h1 className="text-[14px] font-light italic leading-[150%] text-[#626C7F] transition dark:text-white md:text-[20px]">
         {items.title}
-      </span>
+      </h1>
       <span className="text-[20px] font-medium leading-[120%] text-[#313E51] transition dark:text-white md:text-[36px]">
         {items.description}
       </span>

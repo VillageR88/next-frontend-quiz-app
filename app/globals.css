@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .imageBackground {
-  @apply fixed h-screen -z-10 w-screen mx-auto object-cover transition;
+  @apply fixed -z-10 mx-auto h-full w-full object-scale-down object-left-top transition xl:object-fill;
 }

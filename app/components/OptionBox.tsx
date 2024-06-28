@@ -35,7 +35,7 @@ const ChoiceBarQuiz = ({ src, desc }: ChoiceBarQuizProps) => {
       <div
         className={`${bgColors[desc as keyof typeof bgColors]} flex size-[40px] items-center justify-center rounded-[8px] md:size-[56px]`}
       >
-        <Image className="size-fit" width={40} height={40} src={src} alt={desc} />
+        <Image className="size-3/4 md:size-fit" width={40} height={40} src={src} alt="" />
       </div>
 
       <span className="text-start text-[18px] font-medium leading-[100%] text-[#313E51] transition dark:text-white xl:text-[28px]">
@@ -97,7 +97,7 @@ const ChoiceBarOptions = ({ desc, index, letter }: ChoiceBarOptionsProps) => {
           {letter}
         </span>
       </div>
-      <span className="w-full text-start text-[18px] font-medium leading-[100%] text-[#313E51] transition dark:text-white xl:text-[28px]">
+      <span className="w-full text-start text-[18px] font-medium leading-[100%] text-[#313E51] transition dark:text-white md:text-[28px]">
         {desc}
       </span>
       <IconCheck index={index} isCorrect={isCorrect} answer={answer} currentOption={currentOption} />
@@ -111,7 +111,7 @@ export default function OptionBox() {
   const listAnswers = dataJSON.quizzes.find((item) => item.title === (selectionQuiz as string))?.questions[progress - 1]
     .options;
   return (
-    <div className="flex h-[292px] flex-col justify-between md:h-[392px] md:w-[564px] xl:h-[440px]">
+    <div className="flex h-[292px] w-[327px] flex-col justify-between md:h-[392px] md:w-[640px] xl:h-[440px] xl:w-[564px]">
       {progress === 0 &&
         dataJSON.quizzes.map((subject) => (
           <ChoiceBarQuiz src={subject.icon} desc={subject.title} key={subject.title} />

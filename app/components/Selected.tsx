@@ -10,19 +10,19 @@ export default function Selected() {
   if (!selectionQuiz) return <div></div>;
 
   return (
-    <div className="flex items-center justify-between gap-[24px] text-black">
+    <div className="flex items-center justify-between gap-[16px] text-black md:gap-[24px]">
       <div
         className={`${bgColors[selectionQuiz as keyof typeof bgColors]} flex size-[40px] items-center justify-center rounded-[8px] md:size-[56px]`}
       >
         <Image
-          className="size-fit"
+          className="size-3/4 md:size-fit"
           width={40}
           height={40}
           src={dataJson.quizzes.find((item) => item.title === (selectionQuiz as string))?.icon ?? ''}
-          alt={dataJson.quizzes.find((item) => item.title === (selectionQuiz as string))?.title ?? ''}
+          alt={''}
         />
       </div>
-      <span className="text-[28px] font-medium leading-[100%] text-[#313E51] transition dark:text-white">
+      <span className="text-[18px] font-medium leading-[100%] text-[#313E51] transition dark:text-white xl:text-[28px]">
         {selectionQuiz}
       </span>
     </div>
