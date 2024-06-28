@@ -12,13 +12,13 @@ export default function Welcome() {
   if (progress !== 0) return;
   return (
     <section className="flex flex-col">
-      <span className="text-[64px] font-light leading-[100%] text-[#313E51] transition dark:text-white">
+      <span className="text-[40px] font-light leading-[100%] text-[#313E51] transition dark:text-white md:text-[64px]">
         {items.line1}
       </span>
-      <span className="mt-[8px] text-[64px] font-medium leading-[100%] text-[#313E51] transition dark:text-white">
+      <span className="mt-[8px] text-[40px] font-medium leading-[100%] text-[#313E51] transition dark:text-white md:text-[64px]">
         {items.line2}
       </span>
-      <span className="mt-[48px] text-[20px] italic leading-[150%] text-[#626C7F] transition dark:text-[#ABC1E1]">
+      <span className="mt-[16px] text-[14px] italic leading-[150%] text-[#626C7F] transition dark:text-[#ABC1E1] md:text-[20px] xl:mt-[48px]">
         {items.line3}
       </span>
     </section>

@@ -48,9 +48,9 @@ export default function ButtonSubmit() {
         }
       }}
       type="button"
-      className="group/button h-[92px] w-full rounded-[24px] bg-[#A729F5] text-[28px] font-medium leading-[100%] text-white"
+      className="group/button h-[56px] w-full rounded-[12px] bg-[#A729F5] text-[18px] font-medium leading-[100%] text-white md:h-[92px] md:rounded-[24px] md:text-[28px]"
     >
-      <div className="flex size-full items-center justify-center rounded-[24px] transition group-hover/button:bg-white/50">
+      <div className="flex size-full items-center justify-center rounded-[12px] transition group-hover/button:bg-white/50 md:rounded-[24px]">
         {progress < 11 ? (showCorrect ? titleNext : titleSubmit) : titleReplay}
       </div>
     </button>

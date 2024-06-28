@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 import { Rubik } from 'next/font/google';
 import { ReactNode } from 'react';
 import DataContext from '@/app/_lib/DataContext';
+import Image from 'next/image';
+import patternBackgroundDesktopLight from '@/public/assets/images/pattern-background-desktop-light.svg';
+import patternBackgroundDesktopDark from '@/public/assets/images/pattern-background-desktop-dark.svg';
 
 const rubik = Rubik({
   display: 'swap',
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
   applicationName: 'Frontend Quiz app',
 } as const;
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html className="hidden" lang="en">
       <head>
@@ -27,6 +30,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta property="og:image" content={undefined} />
       </head>
       <body className={`${rubik.variable} mx-auto w-full overflow-x-clip font-rubik`}>
+        <Image
+          className="imageBackground bg-[#F4F6FA] dark:opacity-0"
+          src={(await patternBackgroundDesktopLight) as string}
+          alt="background pattern"
+        />
+        <Image
+          className="imageBackground bg-[#313E51] opacity-0 dark:opacity-100"
+          src={(await patternBackgroundDesktopDark) as string}
+          alt="background pattern"
+        />
         <DataContext>{children}</DataContext>
       </body>
     </html>

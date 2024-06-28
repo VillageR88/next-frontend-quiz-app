@@ -12,7 +12,7 @@ export default function Selected() {
   return (
     <div className="flex items-center justify-between gap-[24px] text-black">
       <div
-        className={`${bgColors[selectionQuiz as keyof typeof bgColors]} flex size-[56px] items-center justify-center rounded-[8px]`}
+        className={`${bgColors[selectionQuiz as keyof typeof bgColors]} flex size-[40px] items-center justify-center rounded-[8px] md:size-[56px]`}
       >
         <Image
           className="size-fit"

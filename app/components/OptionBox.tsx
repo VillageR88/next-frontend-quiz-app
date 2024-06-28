@@ -30,15 +30,15 @@ const ChoiceBarQuiz = ({ src, desc }: ChoiceBarQuizProps) => {
       }}
       aria-label={desc}
       type="button"
-      className="group/buttonOption flex h-[80px] w-full items-center gap-[32px] rounded-[24px] bg-white pl-[20px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] transition dark:bg-[#3B4D66] dark:shadow-none xl:h-[96px]"
+      className="group/buttonOption flex h-[64px] w-full items-center gap-[32px] rounded-[12px] bg-white pl-[12px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] transition dark:bg-[#3B4D66] dark:shadow-none md:h-[80px] md:rounded-[24px] md:pl-[20px] xl:h-[96px]"
     >
       <div
-        className={`${bgColors[desc as keyof typeof bgColors]} flex size-[56px] items-center justify-center rounded-[8px]`}
+        className={`${bgColors[desc as keyof typeof bgColors]} flex size-[40px] items-center justify-center rounded-[8px] md:size-[56px]`}
       >
         <Image className="size-fit" width={40} height={40} src={src} alt={desc} />
       </div>
 
-      <span className="text-start text-[28px] font-medium leading-[100%] text-[#313E51] transition dark:text-white">
+      <span className="text-start text-[18px] font-medium leading-[100%] text-[#313E51] transition dark:text-white xl:text-[28px]">
         {desc}
       </span>
     </button>
@@ -86,18 +86,18 @@ const ChoiceBarOptions = ({ desc, index, letter }: ChoiceBarOptionsProps) => {
       }}
       aria-label={desc}
       type="button"
-      className={`${selectionOption === index ? (showCorrect ? (isCorrect ? 'outline-[#26D782]' : 'outline-[#EE5454]') : 'outline-[#A729F5]') : 'outline-[#A729F5]/0'} group/buttonOption flex h-[80px] w-full items-center gap-[32px] rounded-[24px] bg-white pl-[20px] pr-[31px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] outline outline-[3px] transition dark:bg-[#3B4D66] dark:shadow-none xl:h-[96px]`}
+      className={`${selectionOption === index ? (showCorrect ? (isCorrect ? 'outline-[#26D782]' : 'outline-[#EE5454]') : 'outline-[#A729F5]') : 'outline-[#A729F5]/0'} group/buttonOption flex h-[64px] w-full items-center gap-[16px] rounded-[12px] bg-white pl-[20px] pr-[12px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] outline outline-[3px] transition dark:bg-[#3B4D66] dark:shadow-none md:h-[80px] md:gap-[32px] md:rounded-[24px] md:pr-[31px] xl:h-[96px]`}
     >
       <div
-        className={`transition ${selectionOption === index ? (showCorrect ? (isCorrect ? 'bg-[#26D782]' : 'bg-[#EE5454]') : 'bg-[#A729F5]') : `bg-[#F4F6FA] ${showCorrect ? '' : 'group-hover/buttonOption:bg-[#F6E7FF]'}`} flex size-[56px] min-w-[56px] items-center justify-center rounded-[8px]`}
+        className={`transition ${selectionOption === index ? (showCorrect ? (isCorrect ? 'bg-[#26D782]' : 'bg-[#EE5454]') : 'bg-[#A729F5]') : `bg-[#F4F6FA] ${showCorrect ? '' : 'group-hover/buttonOption:bg-[#F6E7FF]'}`} flex size-[40px] min-w-[40px] items-center justify-center rounded-[8px] md:size-[56px] md:min-w-[56px]`}
       >
         <span
-          className={`transition ${selectionOption === index ? 'text-white' : ` ${showCorrect ? '' : 'group-hover/buttonOption:text-[#A729F5]'}`} text-[28px] font-medium leading-[100%] text-[#626C7F]`}
+          className={`transition ${selectionOption === index ? 'text-white' : ` ${showCorrect ? '' : 'group-hover/buttonOption:text-[#A729F5]'}`} text-[18px] font-medium leading-[100%] text-[#626C7F] md:text-[28px]`}
         >
           {letter}
         </span>
       </div>
-      <span className="w-full text-start text-[28px] font-medium leading-[100%] text-[#313E51] transition dark:text-white">
+      <span className="w-full text-start text-[18px] font-medium leading-[100%] text-[#313E51] transition dark:text-white xl:text-[28px]">
         {desc}
       </span>
       <IconCheck index={index} isCorrect={isCorrect} answer={answer} currentOption={currentOption} />
@@ -111,7 +111,7 @@ export default function OptionBox() {
   const listAnswers = dataJSON.quizzes.find((item) => item.title === (selectionQuiz as string))?.questions[progress - 1]
     .options;
   return (
-    <div className="flex h-[392px] w-[564px] flex-col justify-between xl:h-[440px]">
+    <div className="flex h-[292px] flex-col justify-between md:h-[392px] md:w-[564px] xl:h-[440px]">
       {progress === 0 &&
         dataJSON.quizzes.map((subject) => (
           <ChoiceBarQuiz src={subject.icon} desc={subject.title} key={subject.title} />

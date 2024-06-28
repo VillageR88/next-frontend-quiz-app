@@ -9,12 +9,12 @@ export default function SummaryBox() {
   const { score, progress } = useContext(DataContext);
   if (progress !== 11) return null;
   return (
-    <div className="flex h-[388px] w-[564px] flex-col items-center justify-center rounded-[24px] bg-white transition dark:bg-[#3B4D66]">
+    <div className="flex h-[242px] flex-col items-center justify-center rounded-[24px] bg-white transition dark:bg-[#3B4D66] md:h-[388px] md:w-[564px]">
       <Selected />
-      <span className="text-[144px] font-medium tracking-normal text-[#313E51] transition dark:text-white">
+      <span className="text-[88px] font-medium tracking-normal text-[#313E51] transition dark:text-white md:text-[144px]">
         {score}
       </span>
-      <span className="text-[24px] leading-[150%] tracking-normal text-[#626C7F] transition dark:text-[#ABC1E1]">
+      <span className="text-[18px] leading-[150%] tracking-normal text-[#626C7F] transition dark:text-[#ABC1E1] md:text-[24px]">
         {ofTotal}
       </span>
     </div>
