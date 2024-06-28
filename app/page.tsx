@@ -8,6 +8,7 @@ import ProgressBar from './components/ProgressBar';
 import ButtonSubmit from './components/ButtonSubmit';
 import Welcome from './components/Welcome';
 import Option from './components/Option';
+import Summary from './components/Summary';
 import SummaryBox from './components/SummaryBox';
 
 export default async function Home() {
@@ -33,6 +34,7 @@ export default async function Home() {
             <div className="flex h-[452px] max-h-full w-[453px] flex-col justify-between">
               <Welcome />
               <Option />
+              <Summary />
               <ProgressBar />
             </div>
             <div className="flex h-full flex-col justify-start gap-[32px]">

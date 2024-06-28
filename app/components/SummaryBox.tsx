@@ -6,7 +6,8 @@ import { useContext } from 'react';
 const ofTotal = 'out of 10';
 
 export default function SummaryBox() {
-  const { score } = useContext(DataContext);
+  const { score, progress } = useContext(DataContext);
+  if (progress !== 11) return null;
   return (
     <div className="flex h-[388px] w-[564px] flex-col items-center justify-center rounded-[24px] bg-white transition dark:bg-[#3B4D66]">
       <Selected />

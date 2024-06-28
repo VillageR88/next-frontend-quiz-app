@@ -107,7 +107,7 @@ const ChoiceBarOptions = ({ desc, index, letter }: ChoiceBarOptionsProps) => {
 
 export default function OptionBox() {
   const { progress, selectionQuiz } = useContext(DataContext);
-  if (!progress || progress > 10) return null;
+  if (progress > 10) return null;
   const listAnswers = dataJSON.quizzes.find((item) => item.title === (selectionQuiz as string))?.questions[progress - 1]
     .options;
   return (
