@@ -13,7 +13,7 @@ import SummaryBox from './components/SummaryBox';
 
 export default async function Home() {
   return (
-    <div className="flex size-full min-h-screen items-center">
+    <div className="flex h-screen min-h-full items-center xl:w-full">
       <Image
         className="imageBackground bg-[#F4F6FA] dark:opacity-0"
         src={(await patternBackgroundDesktopLight) as string}
@@ -24,13 +24,13 @@ export default async function Home() {
         src={(await patternBackgroundDesktopDark) as string}
         alt="background pattern"
       />
-      <div className="relative mx-auto flex size-full min-h-screen max-w-[1160px] items-center">
-        <div className="size-full h-[960px] max-h-screen pb-[280px] pt-[97px]">
-          <div className="flex h-[56px] w-full justify-between">
+      <div className="relative mx-auto flex h-full max-w-[1160px] flex-col items-center xl:w-full">
+        <div className="flex size-full min-h-[1024px] flex-col items-center justify-center xl:min-h-[960px]">
+          <div className="flex h-[56px] w-full justify-between pt-[40px]">
             <Selected />
             <ButtonTheme />
           </div>
-          <div className="mt-[85px] flex h-[564px] w-full justify-between">
+          <div className="mt-[85px] flex min-h-[564px] w-full flex-col justify-between gap-[64px] xl:flex-row">
             <div className="flex h-[452px] max-h-full w-[453px] flex-col justify-between">
               <Welcome />
               <Option />

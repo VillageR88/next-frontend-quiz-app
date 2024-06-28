@@ -54,7 +54,7 @@ export default function ButtonTheme() {
       onClick={() => {
         theme === Theme.dark ? setTheme(Theme.light) : setTheme(Theme.dark);
       }}
-      className="flex items-center gap-[16px] fill-white pr-2 transition"
+      className="flex items-center gap-[16px] fill-white transition"
     >
       <svg
         className="fill-[#626C7F] transition-colors dark:fill-white"

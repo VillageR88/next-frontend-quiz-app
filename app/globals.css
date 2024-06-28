@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .imageBackground {
-    @apply fixed h-screen w-screen object-fill transition
+  @apply fixed min-h-screen w-screen object-fill transition;
 }

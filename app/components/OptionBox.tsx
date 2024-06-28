@@ -30,7 +30,7 @@ const ChoiceBarQuiz = ({ src, desc }: ChoiceBarQuizProps) => {
       }}
       aria-label={desc}
       type="button"
-      className="group/buttonOption flex h-[96px] w-full items-center gap-[32px] rounded-[24px] bg-white pl-[20px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] transition dark:bg-[#3B4D66] dark:shadow-none"
+      className="group/buttonOption flex h-[80px] w-full items-center gap-[32px] rounded-[24px] bg-white pl-[20px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] transition dark:bg-[#3B4D66] dark:shadow-none xl:h-[96px]"
     >
       <div
         className={`${bgColors[desc as keyof typeof bgColors]} flex size-[56px] items-center justify-center rounded-[8px]`}
@@ -86,7 +86,7 @@ const ChoiceBarOptions = ({ desc, index, letter }: ChoiceBarOptionsProps) => {
       }}
       aria-label={desc}
       type="button"
-      className={`${selectionOption === index ? (showCorrect ? (isCorrect ? 'outline-[#26D782]' : 'outline-[#EE5454]') : 'outline-[#A729F5]') : 'outline-[#A729F5]/0'} group/buttonOption flex h-[96px] w-full items-center gap-[32px] rounded-[24px] bg-white pl-[20px] pr-[31px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] outline outline-[3px] transition dark:bg-[#3B4D66] dark:shadow-none`}
+      className={`${selectionOption === index ? (showCorrect ? (isCorrect ? 'outline-[#26D782]' : 'outline-[#EE5454]') : 'outline-[#A729F5]') : 'outline-[#A729F5]/0'} group/buttonOption flex h-[80px] w-full items-center gap-[32px] rounded-[24px] bg-white pl-[20px] pr-[31px] shadow-[0_10px_50px_-15px_rgba(143,160,193,0.5)] outline outline-[3px] transition dark:bg-[#3B4D66] dark:shadow-none xl:h-[96px]`}
     >
       <div
         className={`transition ${selectionOption === index ? (showCorrect ? (isCorrect ? 'bg-[#26D782]' : 'bg-[#EE5454]') : 'bg-[#A729F5]') : `bg-[#F4F6FA] ${showCorrect ? '' : 'group-hover/buttonOption:bg-[#F6E7FF]'}`} flex size-[56px] min-w-[56px] items-center justify-center rounded-[8px]`}
@@ -111,7 +111,7 @@ export default function OptionBox() {
   const listAnswers = dataJSON.quizzes.find((item) => item.title === (selectionQuiz as string))?.questions[progress - 1]
     .options;
   return (
-    <div className="flex h-[440px] w-[564px] flex-col justify-between">
+    <div className="flex h-[392px] w-[564px] flex-col justify-between xl:h-[440px]">
       {progress === 0 &&
         dataJSON.quizzes.map((subject) => (
           <ChoiceBarQuiz src={subject.icon} desc={subject.title} key={subject.title} />
